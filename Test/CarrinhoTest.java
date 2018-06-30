@@ -12,10 +12,7 @@ public class CarrinhoTest {
 
 	@Test
 	public void deveAdicionarUmProdutoAoCarinho() {
-		Produto produto = new Produto();
-		produto.setDescricao("Camisa social");
-		produto.setTipoProduto(TipoProduto.VESTUARIO);
-		produto.setValorUnitario(90.00);
+		Produto produto = new Produto("Camisa social", 90.00, TipoProduto.VESTUARIO);
 
 		Carrinho carrinho = new Carrinho();
 		carrinho.adicionarProduto(produto, 1);
@@ -24,10 +21,7 @@ public class CarrinhoTest {
 
 	@Test
 	public void deveAdicionarDoisProdutosAoCarinho() {
-		Produto produto = new Produto();
-		produto.setDescricao("Camisa social");
-		produto.setTipoProduto(TipoProduto.VESTUARIO);
-		produto.setValorUnitario(90.00);
+		Produto produto = new Produto("Camisa social", 90.00, TipoProduto.VESTUARIO);
 
 		Carrinho carrinho = new Carrinho();
 		carrinho.adicionarProduto(produto, 2);
@@ -36,35 +30,23 @@ public class CarrinhoTest {
 
 	@Test
 	public void deveAplicarDescontoDeCincoPorcento() {
-		Produto produtoBebida = new Produto();
-		produtoBebida.setDescricao("Cerveja SOL");
-		produtoBebida.setTipoProduto(TipoProduto.BEBIDA);
-		produtoBebida.setValorUnitario(5.00);
+		Produto produtoBebida = new Produto("Cerveja SOL", 5.00, TipoProduto.BEBIDA);
 
 		assertEquals(Double.valueOf(4.75), produtoBebida.getValor());
 	}
 
 	@Test
 	public void deveAplicarDescontoDeVinteCincoPorcento() {
-		Produto produtoVestuario = new Produto();
-		produtoVestuario.setDescricao("Camisa social");
-		produtoVestuario.setTipoProduto(TipoProduto.VESTUARIO);
-		produtoVestuario.setValorUnitario(90.00);
+		Produto produtoVestuario = new Produto("Camisa social", 90.00, TipoProduto.VESTUARIO);
 
 		assertEquals(Double.valueOf(67.50), produtoVestuario.getValor());
 	}
 
 	@Test
 	public void totalizarValorDeDoisProdutos() {
-		Produto produtoVestuario = new Produto();
-		produtoVestuario.setDescricao("Camisa social");
-		produtoVestuario.setTipoProduto(TipoProduto.VESTUARIO);
-		produtoVestuario.setValorUnitario(90.00);
+		Produto produtoVestuario = new Produto("Camisa social", 90.00, TipoProduto.VESTUARIO);
 
-		Produto produtoBebida = new Produto();
-		produtoBebida.setDescricao("Cerveja SOL");
-		produtoBebida.setTipoProduto(TipoProduto.BEBIDA);
-		produtoBebida.setValorUnitario(5.00);
+		Produto produtoBebida = new Produto("Cerveja SOL", 5.00, TipoProduto.BEBIDA);
 
 		Carrinho carrinho = new Carrinho();
 		carrinho.adicionarProduto(produtoVestuario, 1);
@@ -75,15 +57,9 @@ public class CarrinhoTest {
 
 	@Test
 	public void deveOrdenarCarrinhoPeloValorCrescentemente() {
-		Produto produtoVestuario = new Produto();
-		produtoVestuario.setDescricao("Camisa social");
-		produtoVestuario.setTipoProduto(TipoProduto.VESTUARIO);
-		produtoVestuario.setValorUnitario(90.00);
+		Produto produtoVestuario = new Produto("Camisa social", 90.00, TipoProduto.VESTUARIO);
 
-		Produto produtoBebida = new Produto();
-		produtoBebida.setDescricao("Cerveja SOL");
-		produtoBebida.setTipoProduto(TipoProduto.BEBIDA);
-		produtoBebida.setValorUnitario(5.00);
+		Produto produtoBebida = new Produto("Cerveja SOL", 5.00, TipoProduto.BEBIDA);
 
 		Carrinho carrinho = new Carrinho();
 		carrinho.adicionarProduto(produtoVestuario, 1);
@@ -97,15 +73,8 @@ public class CarrinhoTest {
 
 	@Test
 	public void deveOrdenarCarrinhoPeloValorDecrescentemente() {
-		Produto produtoBebida = new Produto();
-		produtoBebida.setDescricao("Cerveja SOL");
-		produtoBebida.setTipoProduto(TipoProduto.BEBIDA);
-		produtoBebida.setValorUnitario(5.00);
-
-		Produto produtoVestuario = new Produto();
-		produtoVestuario.setDescricao("Camisa social");
-		produtoVestuario.setTipoProduto(TipoProduto.VESTUARIO);
-		produtoVestuario.setValorUnitario(90.00);
+		Produto produtoBebida = new Produto("Cerveja SOL", 5.00, TipoProduto.BEBIDA);
+		Produto produtoVestuario = new Produto("Camisa social", 90.00, TipoProduto.VESTUARIO);
 
 		Carrinho carrinho = new Carrinho();
 		carrinho.adicionarProduto(produtoVestuario, 1);

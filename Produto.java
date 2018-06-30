@@ -1,9 +1,15 @@
 package br.edu.unoesc.smo.aulaOO.questaoFinal;
 
 public class Produto {
-	private String Descricao;
+	private String descricao;
 	private Double valorUnitario;
 	private TipoProduto tipoProduto;
+
+	public Produto(String descricao, Double valorUnitario, TipoProduto tipoProduto) {
+		this.descricao = descricao;
+		this.valorUnitario = valorUnitario;
+		this.tipoProduto = tipoProduto;
+	}
 
 	public TipoProduto getTipoProduto() {
 		return tipoProduto;
@@ -26,11 +32,11 @@ public class Produto {
 	}
 
 	public String getDescricao() {
-		return Descricao;
+		return descricao;
 	}
 
 	public void setDescricao(String descricao) {
-		Descricao = descricao;
+		this.descricao = descricao;
 	}
 
 }
